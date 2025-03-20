@@ -1,7 +1,12 @@
 package main;
 
 import restaurant.Restaurant;
+import restaurant.Food;
 import restaurant.Menu;
+
+import java.text.NumberFormat;
+import java.util.Locale;
+
 import people.Chef;
 import people.Visitor;
 
@@ -12,6 +17,9 @@ public class Main {
 		
 		Chef chef1 = new Chef("Bintang");
 		Chef chef2 = new Chef("Sawitri");
+		
+		restaurant.addChef(chef1);
+		restaurant.addChef(chef2);
 		
 		Visitor visitor1 = new Visitor("Ebednezer");
 		Visitor visitor2 = new Visitor("Granite");
@@ -27,7 +35,7 @@ public class Main {
 		
 		Menu dessert = new Menu("Dessert");
 		
-		dessert.add(new Food("Ice Cream"), 1000);
+		dessert.add(new Food("Ice Cream", 1000));
 		dessert.add(new Food("Es Pisang Ijo", 23000));
 		dessert.add(new Food("Jus Emas", 999000));
 		
@@ -50,4 +58,12 @@ public class Main {
 		
 		restaurant.showTotalIncome();
 	}
+	
+	public static String formatIDR(int amount) { 
+
+        NumberFormat formatter = NumberFormat.getCurrencyInstance(new Locale("id", "ID")); 
+
+        return formatter.format(amount); 
+
+    } 
 }
