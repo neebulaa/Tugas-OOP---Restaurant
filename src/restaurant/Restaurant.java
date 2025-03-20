@@ -14,6 +14,7 @@ public class Restaurant {
 
 	public Restaurant(String name) {
 		this.name = name;
+		System.out.println("Welcome to " + this.name + " Restaurant");
 	}
 
 	public void addMenu(Menu menu) {

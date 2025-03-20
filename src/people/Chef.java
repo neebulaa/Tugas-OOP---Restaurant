@@ -53,10 +53,8 @@ public class Chef {
 		System.out.println(this.name + "'s cook history: ");
 		int i = 0;
 		for (Food food : foodsHistory) {
-			for (Integer qty : quantityHistory) {
-				System.out.println("  - " + food.getName() + " (" + Main.formatIDR(qty * food.getPrice()) + ")");
-				System.out.println("      " + qty + " x " + Main.formatIDR(food.getPrice()));
-			}
+			System.out.println("  - " + food.getName() + " (" + Main.formatIDR(quantityHistory.get(i) * food.getPrice()) + ")");
+			System.out.println("      " + quantityHistory.get(i) + " x " + Main.formatIDR(food.getPrice()));
 			i++;
 		}
 	}
